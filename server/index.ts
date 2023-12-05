@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import "dotenv/config";
+import routes from "./routes/userRoute";
 
 const app = express();
 
@@ -16,3 +17,5 @@ mongoose
   });
 
 app.listen(port, () => console.log("Server running"));
+
+app.use(routes);
