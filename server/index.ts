@@ -2,10 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import "dotenv/config";
 import { routes } from "./routes/routes";
-import bodyParser from "body-parser";
+import cors from "cors";
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
 app.use(routes);
 
 const mongoURL = process.env.MONGO_URL || "mongodb://localhost:27017/default";
