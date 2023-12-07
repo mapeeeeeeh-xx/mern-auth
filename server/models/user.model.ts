@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+type registerUser = {
+  username: string;
+  email: string;
+  password: string;
+  profilePicture: string;
+};
+
+const userSchema = new mongoose.Schema<registerUser>(
   {
     username: {
       type: String,
